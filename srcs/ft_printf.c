@@ -6,7 +6,7 @@
 /*   By: llaurent <llaurent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:18:26 by llaurent          #+#    #+#             */
-/*   Updated: 2019/11/19 15:47:45 by llaurent         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:49:22 by llaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,8 @@ int main (void)
 	printf(" %-#10x \n", number);
 	printf(" %#x \n\n", number);
 */
-	ft_printf("d %.5s %.9d %.5d\n", "bonjour", 50, -1337);
-	printf("d %.5s %.9d %09%\n", "bonjour", 50);
+	ft_printf("d %.5s %.9d %.5%\n", "bonjour", 50);
+	printf("d %.5s %.9d %.5%\n", "bonjour", 50);
 	//printf("\nd %s\n", "bonjour");
 
 

@@ -42,6 +42,8 @@ void	ft_putnbr_count(long int nb, int *count, arg_param *param)
 	pre_cpy = param->precision;
 	width_cpy = param->width2;
 	index = 0;
+	if (!param->precision && !nb)
+		return;
 	while ((param->width2) > 0)
 	{
 		if (index < (width_cpy - get_nbr_length(a) + (nb < 0 ? -1 : 0) - (pre_cpy > 0 ? pre_cpy - get_nbr_length(a) : 0)))
