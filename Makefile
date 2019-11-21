@@ -6,36 +6,52 @@
 #    By: llaurent <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 11:15:39 by llaurent          #+#    #+#              #
-#    Updated: 2019/11/08 10:45:33 by llaurent         ###   ########.fr        #
+#    Updated: 2019/11/21 17:52:58 by llaurent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
-PATH_SRCS = srcs
-PATH_HEADERS = includes
-PATH_LIBS = libs
-COMPILER_COMMAND = gcc
-LIB_CREATOR_COMMAND = ar
-RM_COMMAND = rm -f
-FLAGS = -Wall -Wextra -Werror
-OPTIONS = -I${PATH_HEADERS}
-SRCS = ${PATH_SRCS}/ft_printf.c
-LIBS = ${PATH_LIBS}/ft_strlen.c
-OBJS = ${SRCS:.c=.o}
-LIBS_OBJS = ${LIBS:.c=.o}
+SRCSC		= srcs/ft_handlers.c\
+				srcs/ft_printf.c\
+				srcs/ft_strjoin_c.c
 
-all: ${NAME}
+SRCSH		= includes/printf.h
 
-.c.o: ${OBJS} ${LIBS_OBJS}
-	${COMPILER_COMMAND} ${OPTIONS} ${FLAGS} -c $< -o ${<:.c=.o}
+OBJS		= $(SRCSC:%.c=%.o)
 
-$(NAME): ${OBJS} ${LIBS_OBJS}
-	${LIB_CREATOR_COMMAND} rc ${NAME} ${OBJS} ${LIBS_OBJS}
+LIBFT		= libft/libft.a
+
+NAME		= libftprintf.a
+
+CC			= gcc
+
+AR			= ar rc
+
+RM			= rm -f
+
+CFLAGS		= -Wall -Wextra -Werror
+
+$(NAME):	${OBJS} libft
+			${AR} ${NAME} ${OBJS} ${SRCSH} ${LIBFT}
+
+libft:
+			make -C libft all
+
+all:		${NAME}
 
 clean:
-	${RM_COMMAND} ${OBJS} ${LIBS_OBJS}
+			${RM} ${OBJS}
 
-fclean: clean
-	${RM_COMMAND} ${NAME}
+fclean:		clean
+			${RM} ${NAME}
 
-re: fclean all
+re:			fclean all
+
+test-a:		all
+			${CC} ${NAME} ${LIBFT} main.c -o printf
+			./printf a
+
+test:		all
+			${CC} ${NAME} ${LIBFT} main.c -o printf
+			./printf
+
+.PHONY:		all clean fclean re

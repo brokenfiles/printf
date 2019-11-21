@@ -6,7 +6,7 @@
 /*   By: llaurent <llaurent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 14:07:10 by llaurent          #+#    #+#             */
-/*   Updated: 2019/11/20 18:25:24 by llaurent         ###   ########.fr       */
+/*   Updated: 2019/11/21 17:02:09 by llaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int main (int ac, char **av)
 	kos = (char **)malloc(sizeof(char *) * 100);
 	if (ac > 1 && av[1][0] == 'a')
 	{
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %d ", 1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %d", 1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %d\\ ", 1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %d\\", 1337);
 		printf("\nfirst: %d, second: %d, equals: %s\033[00m\n", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO]<--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -53,8 +53,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %s ", "yo lekip");
-		first =     printf("\n---- REAL PRINTF ----\nint : %s", "yo lekip");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %s\\ ", "yo lekip");
+		first =     printf("\n---- REAL PRINTF ----\nint : %s\\", "yo lekip");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -63,8 +63,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %u ", (unsigned int)1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %u", (unsigned int)1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %u\\ ", (unsigned int)1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %u\\", (unsigned int)1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -73,8 +73,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %p ", &rate);
-		first =     printf("\n---- REAL PRINTF ----\nint : %p", &rate);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %p\\ ", &rate);
+		first =     printf("\n---- REAL PRINTF ----\nint : %p\\", &rate);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -83,8 +83,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %x ", 1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %x", 1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %x\\ ", 1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %x\\", 1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -93,8 +93,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %X ", 1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %X", 1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %X\\ ", 1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %X\\", 1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -103,8 +103,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %c ", 'c');
-		first =     printf("\n---- REAL PRINTF ----\nint : %c", 'c');
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %c\\ ", 'c');
+		first =     printf("\n---- REAL PRINTF ----\nint : %c\\", 'c');
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -113,8 +113,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %% ");
-		first =     printf("\n---- REAL PRINTF ----\nint : %%");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %%\\ ");
+		first =     printf("\n---- REAL PRINTF ----\nint : %%\\");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -123,8 +123,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5c ", 'c');
-		first =     printf("\n---- REAL PRINTF ----\nint : %-5c", 'c');
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5c\\ ", 'c');
+		first =     printf("\n---- REAL PRINTF ----\nint : %-5c\\", 'c');
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -133,8 +133,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5s ", "yo lekip");
-		first =     printf("\n---- REAL PRINTF ----\nint : %-5s", "yo lekip");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5s\\ ", "yo lekip");
+		first =     printf("\n---- REAL PRINTF ----\nint : %-5s\\", "yo lekip");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -143,8 +143,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5p ", &number);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-5p", &number);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5p\\ ", &number);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-5p\\", &number);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -153,8 +153,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5d ", 1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-5d", 1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5d\\ ", 1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-5d\\", 1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -163,8 +163,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5i ", 1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-5i", 1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5i\\ ", 1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-5i\\", 1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -173,8 +173,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5u ", (unsigned int)4294967295);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-5u", (unsigned int)4294967295);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5u\\ ", (unsigned int)4294967295);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-5u\\", (unsigned int)4294967295);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -183,8 +183,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-8x ", 1685);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-8x", 1685);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-8x\\ ", 1685);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-8x\\", 1685);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -193,8 +193,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-8X ", 1685);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-8X", 1685);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-8X\\ ", 1685);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-8X\\", 1685);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -203,8 +203,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5% ");
-		first =     printf("\n---- REAL PRINTF ----\nint : %-5%");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-5%\\ ");
+		first =     printf("\n---- REAL PRINTF ----\nint : %-5%\\");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -213,8 +213,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010d ", 1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %010d", 1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010d\\ ", 1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %010d\\", 1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -223,8 +223,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010i ", 1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %010i", 1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010i\\ ", 1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %010i\\", 1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -233,8 +233,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010u ", (unsigned int)1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %010u", (unsigned int)1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010u\\ ", (unsigned int)1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %010u\\", (unsigned int)1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -243,8 +243,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010x ", 1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %010x", 1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010x\\ ", 1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %010x\\", 1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -253,14 +253,14 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010X ", 1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %010X", 1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010X\\ ", 1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %010X\\", 1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;		if (second != first)
 			sprintf(kos[ko], "test #%d failed.", ko+ok);
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010% ");
-		first =     printf("\n---- REAL PRINTF ----\nint : %010%");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010%\\ ");
+		first =     printf("\n---- REAL PRINTF ----\nint : %010%\\");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -269,8 +269,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %5.3s ", "forty-two");
-		first =     printf("\n---- REAL PRINTF ----\nint : %5.3s", "forty-two");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %5.3s\\ ", "forty-two");
+		first =     printf("\n---- REAL PRINTF ----\nint : %5.3s\\", "forty-two");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -279,8 +279,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10d ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %.10d", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10d\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %.10d\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -289,8 +289,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10i ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %.10i", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10i\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %.10i\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -299,8 +299,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10u ", (unsigned int)1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %.10u", (unsigned int)1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10u\\ ", (unsigned int)1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %.10u\\", (unsigned int)1337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -309,8 +309,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10x ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %.10x", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10x\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %.10x\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -319,8 +319,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10X ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %.10X", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10X\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %.10X\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -329,8 +329,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10% ");
-		first =     printf("\n---- REAL PRINTF ----\nint : %.10%");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.10%\\ ");
+		first =     printf("\n---- REAL PRINTF ----\nint : %.10%\\");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -339,8 +339,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*c ", 10, 'f');
-		first =     printf("\n---- REAL PRINTF ----\nint : %*c", 10, 'f');
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*c\\ ", 10, 'f');
+		first =     printf("\n---- REAL PRINTF ----\nint : %*c\\", 10, 'f');
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -349,8 +349,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*s ", 10, "yo lekip");
-		first =     printf("\n---- REAL PRINTF ----\nint : %*s", 10, "yo lekip");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*s\\ ", 10, "yo lekip");
+		first =     printf("\n---- REAL PRINTF ----\nint : %*s\\", 10, "yo lekip");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -359,8 +359,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*p ", 20, &number);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*p", 20, &number);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*p\\ ", 20, &number);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*p\\", 20, &number);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -369,8 +369,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*d ", 10, 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*d", 10, 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*d\\ ", 10, 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*d\\", 10, 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -379,8 +379,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*i ", 10, 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*i", 10, 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*i\\ ", 10, 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*i\\", 10, 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -389,8 +389,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*u ", 56, (unsigned int)4294967295);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*u", 56, (unsigned int)4294967295);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*u\\ ", 56, (unsigned int)4294967295);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*u\\", 56, (unsigned int)4294967295);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -399,8 +399,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*x ", 10, 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*x", 10, 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*x\\ ", 10, 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*x\\", 10, 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -409,8 +409,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*X ", 10, 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*X", 10, 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*X\\ ", 10, 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*X\\", 10, 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -419,8 +419,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*% ", 10);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*%", 10);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*%\\ ", 10);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*%\\", 10);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -429,8 +429,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-2.10s ", "forty-two-leet");
-		first =     printf("\n---- REAL PRINTF ----\nint : %-2.10s", "forty-two-leet");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-2.10s\\ ", "forty-two-leet");
+		first =     printf("\n---- REAL PRINTF ----\nint : %-2.10s\\", "forty-two-leet");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -439,8 +439,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-.10d ", 421337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-.10d", 421337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-.10d\\ ", 421337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-.10d\\", 421337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -449,8 +449,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-.10i ", 421337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-.10i", 421337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-.10i\\ ", 421337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-.10i\\", 421337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -459,8 +459,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-.10u ", (unsigned int)421337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-.10u", (unsigned int)421337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-.10u\\ ", (unsigned int)421337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-.10u\\", (unsigned int)421337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -469,8 +469,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-.10x ", 421337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-.10x", 421337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-.10x\\ ", 421337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-.10x\\", 421337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -479,8 +479,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-.10X ", 421337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-.10X", 421337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-.10X\\ ", 421337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %-.10X\\", 421337);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -489,8 +489,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-8.10% ");
-		first =     printf("\n---- REAL PRINTF ----\nint : %-8.10%");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-8.10%\\ ");
+		first =     printf("\n---- REAL PRINTF ----\nint : %-8.10%\\");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -499,8 +499,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8d ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %010.8d", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8d\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %010.8d\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -509,8 +509,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8i ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %010.8i", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8i\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %010.8i\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -519,8 +519,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8u ", (unsigned int)42133721);
-		first =     printf("\n---- REAL PRINTF ----\nint : %010.8u", (unsigned int)42133721);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8u\\ ", (unsigned int)42133721);
+		first =     printf("\n---- REAL PRINTF ----\nint : %010.8u\\", (unsigned int)42133721);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -529,8 +529,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8x ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %010.8x", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8x\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %010.8x\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -539,8 +539,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8X ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %010.8X", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8X\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %010.8X\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -549,8 +549,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8% ");
-		first =     printf("\n---- REAL PRINTF ----\nint : %010.8%");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %010.8%\\ ");
+		first =     printf("\n---- REAL PRINTF ----\nint : %010.8%\\");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -559,8 +559,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010s ", "hello");
-		first =     printf("\n---- REAL PRINTF ----\nint : %.010s", "hello");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010s\\ ", "hello");
+		first =     printf("\n---- REAL PRINTF ----\nint : %.010s\\", "hello");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -569,8 +569,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010d ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %.010d", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010d\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %.010d\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -579,8 +579,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010i ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %.010i", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010i\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %.010i\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -589,8 +589,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010u ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %.010u", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010u\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %.010u\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -599,8 +599,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010x ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %.010x", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010x\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %.010x\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -609,8 +609,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010X ", 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %.010X", 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010X\\ ", 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %.010X\\", 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -619,8 +619,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010% ");
-		first =     printf("\n---- REAL PRINTF ----\nint : %.010%");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %.010%\\ ");
+		first =     printf("\n---- REAL PRINTF ----\nint : %.010%\\");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -629,8 +629,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10s ", 5, "not the same as others");
-		first =     printf("\n---- REAL PRINTF ----\nint : %*.10s", 5, "not the same as others");
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10s\\ ", 5, "not the same as others");
+		first =     printf("\n---- REAL PRINTF ----\nint : %*.10s\\", 5, "not the same as others");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -639,8 +639,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10d ", 16, 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*.10d", 16, 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10d\\ ", 16, 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*.10d\\", 16, 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -649,8 +649,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10i ", 16, 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*.10i", 16, 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10i\\ ", 16, 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*.10i\\", 16, 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -659,8 +659,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10u ", 16, (unsigned int)42133721);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*.10u", 16, (unsigned int)42133721);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10u\\ ", 16, (unsigned int)42133721);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*.10u\\", 16, (unsigned int)42133721);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -669,8 +669,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10x ", 16, 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*.10x", 16, 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10x\\ ", 16, 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*.10x\\", 16, 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -679,8 +679,8 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10X ", 16, 42);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*.10X", 16, 42);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10X\\ ", 16, 42);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*.10X\\", 16, 42);
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -689,8 +689,28 @@ int main (int ac, char **av)
 			kos[ko] = malloc(sizeof(char) * 35);
 			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
 		}
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10% ", 16);
-		first =     printf("\n---- REAL PRINTF ----\nint : %*.10%", 16);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.10%\\ ", 16);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*.10%\\", 16);
+		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
+		ko += (second != first) ? 1 : 0;
+		ok += (second == first) ? 1 : 0;
+		if (second != first)
+		{
+			kos[ko] = malloc(sizeof(char) * 35);
+			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
+		}
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.*d\\ ", 16, 16, 1337);
+		first =     printf("\n---- REAL PRINTF ----\nint : %*.*d\\", 16, 16, 1337);
+		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
+		ko += (second != first) ? 1 : 0;
+		ok += (second == first) ? 1 : 0;
+		if (second != first)
+		{
+			kos[ko] = malloc(sizeof(char) * 35);
+			sprintf(kos[ko], "test #%d failed at line %d.", ko+ok, __LINE__ - 8);
+		}
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-10.5s\\ ", "bonjour");
+		first =     printf("\n---- REAL PRINTF ----\nint : %-10.5s\\", "bonjour");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;
@@ -714,8 +734,18 @@ int main (int ac, char **av)
 	}
 	else
 	{
-		second = ft_printf(  "---- FAKE PRINTF ----\nint : %-16.2d\\ ", 1337);
-		first =     printf("\n---- REAL PRINTF ----\nint : %-16.2d\\", 1337);
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %5.3s\\ ", "forty-two");
+		first =     printf("\n---- REAL PRINTF ----\nint : %5.3s\\", "forty-two");
+		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
+		ko += (second != first) ? 1 : 0;
+		ok += (second == first) ? 1 : 0;
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %05.2%\\ ");
+		first =     printf("\n---- REAL PRINTF ----\nint : %05.2%\\");
+		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
+		ko += (second != first) ? 1 : 0;
+		ok += (second == first) ? 1 : 0;
+		second = ft_printf(  "---- FAKE PRINTF ----\nint : %*.8s\\ ", 7, "1337");
+		first =     printf("\n---- REAL PRINTF ----\nint : %*.8s\\", 7, "1337");
 		printf("%s\nfirst: %d, second: %d, equals: %s\033[00m\n", first != second ? "\n": "", first, second, first == second ? "\033[1;32m[OK]" : "\033[1;31m[KO] <--------------\n");
 		ko += (second != first) ? 1 : 0;
 		ok += (second == first) ? 1 : 0;

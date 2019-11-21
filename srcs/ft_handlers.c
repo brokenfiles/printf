@@ -6,7 +6,7 @@
 /*   By: llaurent <llaurent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:12:14 by llaurent          #+#    #+#             */
-/*   Updated: 2019/11/20 13:12:48 by llaurent         ###   ########.fr       */
+/*   Updated: 2019/11/20 12:03:24 by llaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,28 +48,23 @@ void	ft_putstr_buff(char **buffer, char *str)
 		ft_strjoin_c(buffer, str[index++]);
 }
 
-void	ft_putstr_count(char *str, int *count)
+void	ft_putstr_count(char *str, int *count, int len)
 {
 	int	index;
 
 	index = 0;
-	while (str[index])
-	{
-		write(1, &str[index++], 1);
-		(*count)++;
-	}
-}
-
-void	ft_putstr_count_number(char *str, int *count, int n)
-{
-	int	index;
-
-	index = 0;
-	while (str[index] && index < n)
-	{
-		write(1, &str[index++], 1);
-		(*count)++;
-	}
+    if (len > 0)
+        while (str[index] && index < len)
+        {
+            write(1, &str[index++], 1);
+            (*count)++;
+        }
+    else
+        while (str[index])
+        {
+            write(1, &str[index++], 1);
+            (*count)++;
+        }
 }
 
 void	ft_puthexa_buff(char **buffer, long int nb, arg_param *arg)
@@ -78,9 +73,10 @@ void	ft_puthexa_buff(char **buffer, long int nb, arg_param *arg)
 	char				*base;
 
 	base = (arg->conv == 'X') ? "0123456789ABCDEF" : "0123456789abcdef";
-	if (arg->conv =='p')
+	if (arg->flag == '#' || arg->conv =='p')
 	{
 		ft_putstr_buff(buffer, "0x");
+		arg->flag = 0;
 		arg->conv = (arg->conv == 'p') ? 'x' : arg->conv ;
 	}
 	a = (nb < 0) ? -nb : nb;
