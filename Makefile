@@ -40,8 +40,10 @@ CFLAGS		= -Wall -Wextra -Werror
 
 $(NAME):	${OBJS}
 			@echo "\033[1;32m"
-			@head -4 header
-			@echo "\033[0;0m"
+			@echo "┌─┐┬ ┬┌─┐┌─┐┌─┐┌─┐┌─┐"
+			@echo "└─┐│ ││  │  ├┤ └─┐└─┐"
+			@echo "└─┘└─┘└─┘└─┘└─┘└─┘└─┘"
+			@echo "libftprintf.a generated successfully.\033[0;0m"
 			@${AR} ${NAME} ${OBJS} ${SRCSH}
 
 all:		${NAME}
