@@ -6,7 +6,7 @@
 #    By: llaurent <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 11:15:39 by llaurent          #+#    #+#              #
-#    Updated: 2019/11/24 15:47:52 by louis            ###   ########.fr        #
+#    Updated: 2019/11/21 17:52:58 by llaurent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,22 +34,32 @@ CC			= gcc
 AR			= ar rc
 RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror
-$(NAME):	${OBJS} libft
-			${AR} ${NAME} ${OBJS} ${SRCSH}
-libft:
-			make -C libft all
+
+$(NAME):	${OBJS}
+			@echo "\033[1;32m"
+			@head -4 header
+			@${AR} ${NAME} ${OBJS} ${SRCSH}
+
 all:		${NAME}
+
 clean:
-			${RM} ${OBJS}
+			@echo "Deleting .o files.."
+			@${RM} ${OBJS}
+
 fclean:		clean
-			${RM} ${NAME}
+			@echo "Deleting binary files.."
+			@${RM} ${NAME}
+
 re:			fclean all
+
 test-a:		all
-			${CC} ${NAME} ${LIBFT} tester_main.c -o printf
+			@${CC} ${NAME} ${LIBFT} main.c -o printf
 			make clean
 			./printf a
+
 test:		all
-			${CC} ${NAME} ${CFLAGS} ${LIBFT} tester_main.c -o printf
+			@${CC} ${NAME} ${CFLAGS} ${LIBFT} main.c -o printf
 			make clean
 			./printf
+
 .PHONY:		all clean fclean re
