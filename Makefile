@@ -6,7 +6,7 @@
 #    By: llaurent <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 11:15:39 by llaurent          #+#    #+#              #
-#    Updated: 2019/11/21 17:52:58 by llaurent         ###   ########.fr        #
+#    Updated: 2019/11/24 15:47:52 by louis            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,11 +45,11 @@ fclean:		clean
 			${RM} ${NAME}
 re:			fclean all
 test-a:		all
-			${CC} ${NAME} ${LIBFT} main.c -o printf
+			${CC} ${NAME} ${LIBFT} tester_main.c -o printf
 			make clean
 			./printf a
 test:		all
-			${CC} ${NAME} ${CFLAGS} ${LIBFT} main.c -o printf
+			${CC} ${NAME} ${CFLAGS} ${LIBFT} tester_main.c -o printf
 			make clean
 			./printf
 .PHONY:		all clean fclean re
