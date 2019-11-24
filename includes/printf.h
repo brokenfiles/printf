@@ -47,4 +47,4 @@ void		ft_puthexa_buff(char **buffer, long int nb, arg_param *arg, int flag);
 void		ft_putoctal_buff(char **buffer, int nb);
 void		ft_strjoin_c(char **s1, char s2);
 void		ft_putchar_buff(char **buffer, int c);
-int         ft_printf(char *str, ...);
+int         ft_printf(const char *str, ...);

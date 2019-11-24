@@ -35,9 +35,13 @@ AR			= ar rc
 RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror
 
+.c.o: ${OBJS}
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
 $(NAME):	${OBJS}
 			@echo "\033[1;32m"
 			@head -4 header
+			@echo "\033[0;0m"
 			@${AR} ${NAME} ${OBJS} ${SRCSH}
 
 all:		${NAME}
@@ -54,12 +58,12 @@ re:			fclean all
 
 test-a:		all
 			@${CC} ${NAME} ${LIBFT} main.c -o printf
-			make clean
-			./printf a
+			@make clean
+			@./printf a
 
 test:		all
 			@${CC} ${NAME} ${CFLAGS} ${LIBFT} main.c -o printf
-			make clean
-			./printf
+			@make clean
+			@./printf
 
 .PHONY:		all clean fclean re
