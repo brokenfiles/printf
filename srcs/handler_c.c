@@ -12,7 +12,7 @@
 
 #include "../includes/printf.h"
 
-void	handle_c(char *buffer, arg_param *arg, int *count, int i)
+void	handle_c(char *buffer, t_arg *arg, int *count, int i)
 {
 	i = 0;
 	if (arg->width1 && arg->flag != '-')

@@ -6,13 +6,13 @@
 /*   By: llaurent <llaurent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:18:26 by llaurent          #+#    #+#             */
-/*   Updated: 2019/11/20 13:03:03 by llaurent         ###   ########.fr       */
+/*   Updated: 2019/11/25 12:13:14 by llaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
 
-void reset_arg_param(arg_param *arg)
+void	reset_arg_param(t_arg *arg)
 {
 	arg->conv = 0;
 	arg->flag = 0;
@@ -20,5 +20,5 @@ void reset_arg_param(arg_param *arg)
 	arg->modi = 0;
 	arg->width1 = 0;
 	arg->width2 = 0;
-	arg->flagS = 0;
+	arg->flag_s = 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handlers.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: llaurent <llaurent@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jchotel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 14:12:14 by llaurent          #+#    #+#             */
-/*   Updated: 2019/11/20 12:03:24 by llaurent         ###   ########.fr       */
+/*   Created: 2019/11/18 14:12:14 by jchotel           #+#    #+#             */
+/*   Updated: 2019/11/24 16:43:27 by jchotel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	ft_putnbr_buff(char **buffer, int nb)
 
 	a = (nb < 0) ? -nb : nb;
 	(nb < 0) ? ft_strjoin_c(buffer, '-') : 0;
-	(a > 9) ? ft_putnbr_buff(buffer, (int) (a / 10)) : 0;
+	(a > 9) ? ft_putnbr_buff(buffer, (int)(a / 10)) : 0;
 	ft_strjoin_c(buffer, a % 10 + '0');
 }
 
 void	ft_putnbr_u_buff(char **buffer, unsigned int nb)
 {
-	(nb > 9) ? ft_putnbr_u_buff(buffer, (unsigned int) (nb / 10)) : 0;
+	(nb > 9) ? ft_putnbr_u_buff(buffer, (unsigned int)(nb / 10)) : 0;
 	ft_strjoin_c(buffer, nb % 10 + '0');
 }
 
@@ -50,7 +50,7 @@ void	ft_putstr_buff(char **buffer, char *str)
 			index++;
 		}
 		free(tmp);
-		return;
+		return ;
 	}
 	while (str[index])
 		ft_strjoin_c(buffer, str[index++]);

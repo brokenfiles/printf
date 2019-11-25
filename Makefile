@@ -6,7 +6,7 @@
 #    By: llaurent <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 11:15:39 by llaurent          #+#    #+#              #
-#    Updated: 2019/11/21 17:52:58 by llaurent         ###   ########.fr        #
+#    Updated: 2019/11/25 11:44:56 by llaurent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,11 @@ SRCSC		= 	libft/ft_atoi.c\
 				srcs/handler_c.c\
 				srcs/handler_diu.c\
 				srcs/handler_o.c\
-				srcs/handler_pxX.c\
+				srcs/handler_px.c\
 				srcs/handler_s.c\
 				srcs/handler_struct.c\
 				srcs/handler_utils.c\
+				srcs/handler_utils_2.c\
 				libft/ft_strdup.c
 SRCSH		= includes/printf.h
 OBJS		= $(SRCSC:%.c=%.o)
@@ -59,12 +60,12 @@ fclean:		clean
 re:			fclean all
 
 test-a:		all
-			@${CC} ${NAME} ${LIBFT} main.c -o printf
+			@${CC} ${NAME} ${LIBFT} ../testers/main.c -o printf
 			@make clean
 			@./printf a
 
 test:		all
-			@${CC} ${NAME} ${CFLAGS} ${LIBFT} main.c -o printf
+			@${CC} ${NAME} ${CFLAGS} ${LIBFT} ../testers/main.c -o printf
 			@make clean
 			@./printf
 
