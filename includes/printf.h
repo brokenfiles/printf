@@ -28,7 +28,7 @@ typedef struct	s_arg
 	int		flag_s;
 }				t_arg;
 
-int				ft_printf(char *str, ...);
+int				ft_printf(const char *str, ...);
 void			handle_c(char *buffer, t_arg *arg, int *count, int i);
 void			handle_u(char *buffer, t_arg *arg, int *count, int i);
 void			handle_di(char *buffer, t_arg *arg, int *count, int i);

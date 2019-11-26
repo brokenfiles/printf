@@ -6,7 +6,7 @@
 #    By: llaurent <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/04 11:15:39 by llaurent          #+#    #+#              #
-#    Updated: 2019/11/25 11:44:56 by llaurent         ###   ########.fr        #
+#    Updated: 2019/11/26 13:37:14 by llaurent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ test-a:		all
 			@./printf a
 
 test:		all
-			@${CC} ${NAME} ${CFLAGS} ${LIBFT} ../testers/main.c -o printf
+			${CC} ${NAME} ${CFLAGS} ${LIBFT} ../testers/main.c -o printf
 			@make clean
 			@./printf
 

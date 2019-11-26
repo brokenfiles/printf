@@ -6,7 +6,7 @@
 /*   By: llaurent <llaurent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 12:32:06 by llaurent          #+#    #+#             */
-/*   Updated: 2019/11/25 12:32:06 by llaurent         ###   ########.fr       */
+/*   Updated: 2019/11/26 12:19:20 by llaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,6 @@ void	padding(char c, int len, int *count)
 {
 	while (len-- > 0)
 		ft_putchar_count(c, count);
-}
-
-void	handle_100(char *buffer, t_arg *arg, int *count, int i)
-{
-	if (arg->width1 && arg->flag != '-')
-		(arg->flag == '0') ? padding('0', arg->width1 - i, count) :
-		padding(' ', arg->width1 - i, count);
-	ft_putstr_count(buffer, count, arg->width2);
-	if (arg->width1 && arg->flag == '-')
-		padding(' ', arg->width1 - i, count);
 }
 
 void	handler_arg(va_list va, t_arg *arg, int *count)
@@ -72,21 +62,22 @@ void	priv_fct_2(char *handler, t_arg *arg, va_list va)
 int		set_arg_param(t_arg *arg, char *handler, va_list va)
 {
 	if (ft_strchr("#0-", *handler) &&
-	(!arg->flag || (arg->flag == '-' && *handler == '-')) &&
-		!arg->width1 && !arg->width2)
+		(!arg->flag || (arg->flag == '-' && *handler == '-')) &&
+		!arg->width1 && !arg->width2 && !arg->conv)
 		arg->flag = *handler;
-	else if (ft_isdigit(*handler) && !arg->width1 && !arg->precision)
+	else if (ft_isdigit(*handler) && !arg->width1 && !arg->precision &&
+	!arg->conv && !arg->width2 && !arg->modi)
 		arg->width1 = ft_atoi((const char *)handler);
-	else if (ft_isdigit(*handler) && !arg->precision)
+	else if (ft_isdigit(*handler) && !arg->precision && !arg->conv)
 		return (1);
 	else if (ft_strchr(".*", *handler) && !arg->conv)
 		priv_fct_2(handler, arg, va);
-	else if (ft_isdigit(*handler) && !arg->width2 && !arg->modi)
+	else if (ft_isdigit(*handler) && !arg->width2 && !arg->modi && !arg->conv)
 		arg->width2 = ft_atoi((const char *)handler);
-	else if (ft_isdigit(*handler) && !arg->modi)
+	else if (ft_isdigit(*handler) && !arg->modi && !arg->conv)
 		return (1);
 	else if (ft_strchr("hl", *handler) &&
-	(!arg->modi || arg->modi == 'h' || arg->modi == 'l') && !arg->conv)
+			(!arg->modi || arg->modi == 'h' || arg->modi == 'l') && !arg->conv)
 		arg->modi = (arg->modi == *handler) ? (*handler - 32) : *handler;
 	else if (ft_strchr("diuxXcspo%", *handler) && !arg->conv)
 		arg->conv = *handler;

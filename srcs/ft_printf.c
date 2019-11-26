@@ -6,13 +6,13 @@
 /*   By: llaurent <llaurent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 12:31:31 by llaurent          #+#    #+#             */
-/*   Updated: 2019/11/25 12:31:31 by llaurent         ###   ########.fr       */
+/*   Updated: 2019/11/26 13:37:45 by llaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/printf.h"
 
-int	ft_printf(char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list		va;
 	t_arg		arg;
@@ -26,7 +26,7 @@ int	ft_printf(char *str, ...)
 		{
 			reset_arg_param(&arg);
 			str++;
-			while (set_arg_param(&arg, &*(str), va) && *str)
+			while (set_arg_param(&arg, &*((char *)str), va) && *str)
 				str++;
 			handler_arg(va, &arg, &count);
 		}
