@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llaurent <llaurent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 12:31:31 by llaurent          #+#    #+#             */
-/*   Updated: 2019/11/26 13:38:26 by llaurent         ###   ########.fr       */
+/*   Created: 2019/11/04 11:37:44 by llaurent          #+#    #+#             */
+/*   Updated: 2019/11/27 11:20:16 by llaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
-
-int	ft_printf(const char *str, ...)
+void	ft_bzero(void *s, unsigned int n)
 {
-	va_list		va;
-	t_arg		arg;
-	int			count;
+	unsigned char	*d;
+	unsigned int	index;
 
-	count = 0;
-	va_start(va, str);
-	while (*str)
+	index = 0;
+	d = (unsigned char *)s;
+	while (index < n)
 	{
-		if (*str == '%')
-		{
-			reset_arg_param(&arg);
-			str++;
-			while (set_arg_param(&arg, &*((char *)str), va) && *str)
-				str++;
-			handler_arg(va, &arg, &count);
-		}
-		else
-			ft_putchar_count(*(str++), &count);
+		d[index] = '\0';
+		index++;
 	}
-	va_end(va);
-	return (count);
 }

@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   isdigit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llaurent <llaurent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 12:31:31 by llaurent          #+#    #+#             */
-/*   Updated: 2019/11/26 13:38:26 by llaurent         ###   ########.fr       */
+/*   Created: 2019/10/16 16:11:18 by llaurent          #+#    #+#             */
+/*   Updated: 2019/11/27 11:20:16 by llaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
-
-int	ft_printf(const char *str, ...)
+int	ft_isdigit(int c)
 {
-	va_list		va;
-	t_arg		arg;
-	int			count;
-
-	count = 0;
-	va_start(va, str);
-	while (*str)
-	{
-		if (*str == '%')
-		{
-			reset_arg_param(&arg);
-			str++;
-			while (set_arg_param(&arg, &*((char *)str), va) && *str)
-				str++;
-			handler_arg(va, &arg, &count);
-		}
-		else
-			ft_putchar_count(*(str++), &count);
-	}
-	va_end(va);
-	return (count);
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }

@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llaurent <llaurent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 12:31:31 by llaurent          #+#    #+#             */
-/*   Updated: 2019/11/26 13:38:26 by llaurent         ###   ########.fr       */
+/*   Created: 2019/10/16 21:14:04 by llaurent          #+#    #+#             */
+/*   Updated: 2019/11/27 11:20:16 by llaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/printf.h"
+#include "libft.h"
 
-int	ft_printf(const char *str, ...)
+char	*ft_strdup(const char *s1)
 {
-	va_list		va;
-	t_arg		arg;
-	int			count;
+	int		index;
+	char	*returned_string;
 
-	count = 0;
-	va_start(va, str);
-	while (*str)
+	index = 0;
+	if (!(returned_string = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1)))
+		return (NULL);
+	while (s1[index])
 	{
-		if (*str == '%')
-		{
-			reset_arg_param(&arg);
-			str++;
-			while (set_arg_param(&arg, &*((char *)str), va) && *str)
-				str++;
-			handler_arg(va, &arg, &count);
-		}
-		else
-			ft_putchar_count(*(str++), &count);
+		returned_string[index] = s1[index];
+		index++;
 	}
-	va_end(va);
-	return (count);
+	returned_string[index] = '\0';
+	return (returned_string);
 }
