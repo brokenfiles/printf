@@ -14,11 +14,15 @@
 
 <h1>Résultats de la moulinette :</h1>
 <p align="center">
-  ....
+  <img src="./img/deepthought.png" alt="Curqui test" width="400">
 </p>
 
 <h1>Résultats avec différents testeurs :</h1>
 <p align="center">
+  hbaudet-test (https://github.com/hbaudet/Tests)
+  <br>
+  <img src="./img/hbaudet.png" alt="Curqui test" width="400">
+  <br>
   Curqui-test (https://github.com/curquiza/curqui_test)
   <br>
   <img src="./img/curqui.png" alt="Curqui test" width="400">
