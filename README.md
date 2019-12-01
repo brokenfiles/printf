@@ -14,7 +14,7 @@
 
 <h1>Résultats de la moulinette :</h1>
 <p align="center">
-  <img src="./img/deepthought.png" alt="Curqui test" width="700">
+  <img src="./img/deepthought.png" alt="Curqui test" width="1000">
 </p>
 
 <h1>Résultats avec différents testeurs :</h1>
